@@ -1,0 +1,86 @@
+.registration-wrapper{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registration-wrapper h1{
+  font-size: 48px;  
+  font-family: Roboto;
+  font-weight: bolder;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  color:white;
+}
+
+.registration-main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  border: 2px #5800a0bb solid;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.registration-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registration-form input{
+  margin: 5px;
+  background-color: white;
+}
+
+.registration-form input[type="text"]{
+  font-family: "Roboto", "Arial", sans-serif;
+  color:black;
+  background-color: #a3c6f89d;
+  border-radius: 10px;
+  border: #5800a0bb 2px solid;
+  width: 400px;
+  line-height: 48px;
+  font-size: 24px;
+}
+
+.registration-form input[type="email"]{
+  font-family: "Roboto", "Arial", sans-serif;
+  color:black;
+  background-color: #a3c6f89d;
+  border-radius: 10px;
+  border: #5800a0bb 2px solid;
+  width: 400px;
+  line-height: 48px;
+  font-size: 24px;
+}
+
+.registration-form input[type="password"]{
+  font-family: "Roboto", "Arial", sans-serif;
+  color:black;
+  background-color: #a3c6f89d;
+  border-radius: 10px;
+  border: #5800a0bb 2px solid;
+  width: 400px;
+  line-height: 48px;
+  font-size: 24px;
+}
+
+.registration-form input[type="submit"]{
+  font-family: "Roboto", "Arial", sans-serif;
+  color:white;
+  background-color: #5800a0bb;
+  border-radius: 10px;
+  border: black 1px solid;
+  line-height: 48px;
+  font-size: 24px;
+  width:180px
+}
+
+.registration-form input[type="submit"] :hover{
+  background-color: #5800a0bb;
+  border: 0;
+}
