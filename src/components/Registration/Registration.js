@@ -2,17 +2,6 @@ import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
 import "./Registration.css";
 
-/*
-
-Регистрация:
-Name(name)
-Email(email)
-Password(password)
-Confirm Password(password_confirmation)
-
-
-*/
-
 class Registration extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +9,6 @@ class Registration extends Component {
   }
 
   render() {
-    console.log("Reg render", this.sendRegForm);
     return (
       <div>
         <link
@@ -74,7 +62,7 @@ class Registration extends Component {
   async sendRegForm(e) {
     e.preventDefault();
     let regForm = new FormData(document.forms.regform);
-    await fetch("http://localhost:51005/api/user/Register", {
+    await fetch(this.props.MainStore.url + "api/user/Register", {
       body: regForm,
       method: "POST",
     })

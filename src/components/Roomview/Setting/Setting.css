@@ -1,0 +1,15 @@
+.roomview-setting{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+}
+
+.roomview-setting__name{
+  display: flex;
+}
+
+.roomview-setting__value{
+  display: flex;
+}

@@ -1,0 +1,27 @@
+.user{
+  display: flex;
+}
+
+.user__avatar{
+  display: flex;
+}
+
+.user__nickname{
+  display: flex;
+}
+
+.user__nickname_judge{
+  color:yellow;
+}
+
+.user__nickname_human{
+  color:#1c2bff
+}
+
+.user__nickname_witch{
+  color:#ff2d2d
+}
+
+.user__nickname_spectator{
+  color: gray
+}

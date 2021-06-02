@@ -63,7 +63,7 @@ class Login extends Component {
     let username; // имя пользователя
     let connection;
     let loginForm = new FormData(document.forms.loginform);
-    await fetch("http://localhost:51005/token", {
+    await fetch(this.props.MainStore.url + "token", {
       body: loginForm,
       method: "POST",
     })
@@ -85,16 +85,37 @@ class Login extends Component {
       });
     if (token != null) {
       connection = await setupSignalRConnection(
-        "http://localhost:51005/gamehub",
+        this.props.MainStore.url + "gamehub",
         token
       );
       if (connection.state === "Connected") {
         this.props.MainStore.authorized = true;
         this.props.MainStore.connection = connection;
+        await fetch(this.props.MainStore.url + "api/User/" + this.props.MainStore.userid, {
+          method: "GET",
+          headers: {
+            "Accept": "application/json",
+            "Authorization": "Bearer " + this.props.MainStore.token
+          }
+        })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          console.log(data);
+          if(data.errors==null)
+          {
+            this.props.MainStore.user = data;
+          }
+        })
+        .catch((e) => {
+          console.log("Error: " + e.message);
+          console.log(e.response);
+        });
         const data = new FormData();
         data.append('connectionId',this.props.MainStore.connection.connectionId);
         data.append('userId', this.props.MainStore.userid);
-        await fetch("http://localhost:51005/api/room/UserOnline", {
+        await fetch(this.props.MainStore.url + "api/room/UserOnline", {
           body: data,
           method: "POST",
           headers:{
@@ -104,11 +125,6 @@ class Login extends Component {
     })
         this.props.history.push('/roomlobby');
       }
-      console.log(this.props.MainStore.connection);
-      this.props.MainStore.connection.on("Receive", (message, user) => {
-        console.log(user + ": " + message);
-      });
-      this.props.MainStore.connection.invoke("Send", "123", username);
     }
   }
 }

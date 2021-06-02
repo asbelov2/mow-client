@@ -1,0 +1,23 @@
+.message{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+
+.message__text{
+  display: flex;
+  margin: 0;
+  word-break:break-all;
+}
+
+.message__text_red{
+  color:red;
+}
+
+.message__text_blue{
+  color:blue;
+}
+
+.message__text_gold{
+  color:gold;
+}

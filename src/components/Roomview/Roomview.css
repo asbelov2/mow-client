@@ -1,0 +1,70 @@
+.roomview-wrap{
+  display: flex;
+  width: 90%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.roomview{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 500px;
+  background-color: white;
+  justify-content: space-around;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 15px;
+  border: #5800a0bb 3px solid;
+}
+
+.roomview-leftside{
+  display: flex;
+  flex-direction: column;
+  width: 33.333%;
+  box-sizing: border-box;
+}
+
+.roomview-rightside{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.roomview-settings{
+  display: flex;
+  flex-direction: column;
+}
+
+.roomview-center{
+  display: flex;
+  flex-direction: column;
+}
+
+.roomview__witchside{
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  width: 200px;
+  height: 100px;
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(224,56,56,0.7) 100%);
+  border: black 1px solid;
+  border-top: none;
+  border-radius: 3px;
+}
+
+.roomview__humanside{
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  width: 200px;
+  height: 100px;
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgba(2,0,36,0) 0%, rgba(0,176,255,0.7) 100%);
+  border: black 1px solid;
+  border-bottom: none;
+  border-radius: 3px;
+}

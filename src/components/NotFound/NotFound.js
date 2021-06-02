@@ -1,3 +1,4 @@
+import { inject, observer } from 'mobx-react';
 import React, { Component } from 'react';
 import './NotFound.css';
 
@@ -13,4 +14,4 @@ class NotFound extends Component {
   }
 }
 
-export default NotFound;
+export default inject("MainStore")(observer(NotFound));

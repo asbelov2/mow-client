@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { Home, Registration, Login, NotFound, Roomlobby} from '../';
+import { Home, Registration, Login, NotFound, Roomlobby, Roomview, Gamewindow} from '../';
 import './Container.css';
 
 class Container extends Component {
@@ -13,6 +13,8 @@ class Container extends Component {
             <Route exact path='/registration' component={Registration}/>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/roomlobby' component={Roomlobby}/>
+            <Route exact path='/roomview' component={Roomview}/>
+            <Route exact path='/gamewindow' component={Gamewindow}/>
             <Route component={NotFound}/>
         </Switch>
       </div>

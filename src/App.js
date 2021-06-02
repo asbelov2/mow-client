@@ -1,7 +1,7 @@
 import './App.css';
 import { NavBar, Container } from './components';
 import { Component } from 'react';
-import {observer, inject, Observer} from "mobx-react";
+import {observer, inject} from "mobx-react";
 
 class App extends Component {
   render() {

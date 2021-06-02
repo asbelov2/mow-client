@@ -2,6 +2,10 @@ import {
   makeAutoObservable,
 } from "mobx";
 
+/*
+    TODO: Разобрать эту помойку по разным store
+ */
+
 class MainStore {
   _id = null;
   _token = null;
@@ -10,7 +14,17 @@ class MainStore {
   _authorized = false;
   _rooms = [];
   _stories = [];
-  _selectedRoom = null;
+  _users = [];
+  _userRoles = new Map();
+  _humanTeam = [];
+  _witchTeam = [];
+  _selectedRoomId = null;
+  _room = null;
+  _url = "http://localhost:51005/";
+  _user = null;
+  _role = null;
+  _fakeStory = null;
+  //_url = "https://mow-game.azurewebsites.net/";
 
   constructor() {
     makeAutoObservable(this);
@@ -73,12 +87,84 @@ class MainStore {
     this._stories = stories;
   }
 
-  get selectedRoom () {
-    return this._selectedRoom;
+  get selectedRoomId () {
+    return this._selectedRoomId;
   }
 
-  set selectedRoom (selectedRoom) {
-    this._selectedRoom = selectedRoom;
+  set selectedRoomId (selectedRoomId) {
+    this._selectedRoomId = selectedRoomId;
+  }
+
+  get url () {
+    return this._url;
+  }
+
+  set url (url){
+    this._url = url;
+  }
+
+  get users () {
+    return this._users;
+  }
+
+  set users (users){
+    this._users = users;
+  }
+
+  get room () {
+    return this._room;
+  }
+
+  set room (room){
+    this._room = room;
+  }
+
+  get user() {
+    return this._user;
+  }
+
+  set user(user) {
+    this._user = user;
+  }
+
+  get role() {
+    return this._role;
+  }
+
+  set role(role) {
+    this._role = role;
+  }
+
+  get userRoles() {
+    return this._userRoles
+  }
+
+  set userRoles(userRoles) {
+    this._userRoles = userRoles;
+  }
+
+  get humanTeam() {
+    return this._humanTeam;
+  }
+
+  set humanTeam(humanTeam) {
+    this._humanTeam = humanTeam;
+  }
+
+  get witchTeam() {
+    return this._witchTeam;
+  }
+
+  set witchTeam(witchTeam) {
+    this._witchTeam = witchTeam;
+  }
+
+  get fakeStory() {
+    return this._fakeStory;
+  }
+
+  set fakeStory(fakeStory) {
+    this._fakeStory = fakeStory;
   }
 }
 

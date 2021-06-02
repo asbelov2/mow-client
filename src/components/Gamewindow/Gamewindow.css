@@ -1,0 +1,36 @@
+/*
+    TODO: Украсить разные табы(написать стили для chat-tabs__tab_witch и т.д.)
+*/
+
+.gamewindow{
+  display: flex;
+  flex-direction: row;
+}
+
+.gamewindow-leftside{
+  display: flex;
+  flex-direction: column;
+  width:25%;
+}
+
+.gamewindow-center{
+  display: flex;
+  flex-direction: column;
+  width:50%;
+}
+
+.gamewindow-rightside{
+  display: flex;
+  flex-direction: column;
+  width:25%;
+}
+
+.chat-tabs{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.chat-tabs__tab{
+  display: flex;
+  margin: 0;
+}
